@@ -33,7 +33,9 @@ FString ACXGameModeBase::GenerateSecretNumber()
 		Result.Append(FString::FromInt(Numbers[Index]));
 		Numbers.RemoveAt(Index);
 	}
-	
+
+	// UE_LOG(LogTemp, Warning, TEXT("[SecretNumber] 정답: %s"), *Result);   // Test
+
 	return Result;
 }
 
@@ -351,8 +353,6 @@ void ACXGameModeBase::OnTurnTimerTick()
 		}
 		EndTurn();
 	}
-	
-	UE_LOG(LogTemp, Warning, TEXT("RemainingTime: %d"), NewTime);
 }
 
 void ACXGameModeBase::StartTurn()
